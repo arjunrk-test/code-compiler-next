@@ -3,6 +3,8 @@ import Link from "next/link";
 import { TbHexagonLetterAFilled } from "react-icons/tb";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "@/components/ui/select"; 
 import { Language_Versions } from "@/app/Constants";
+import { Button } from "./ui/button";
+import { FaPlay } from "react-icons/fa";
 
 const languages = Object.entries(Language_Versions);
 const Navbar = () => {
@@ -37,7 +39,7 @@ const Navbar = () => {
          </div>
 
          {/* Language Dropdown */}
-         <div className="flex justify-between items-center w-full ml-2 mr-6">
+         <div className="flex justify-between items-center ml-2 mr-6">
             <Select>
                <SelectTrigger className=" capitalize w-[150px] bg-transparent border-none text-white hover:bg-[#2d2e2f]">
                   <SelectValue placeholder="Languages" className=" font-normal text-[16px]" />
@@ -57,6 +59,14 @@ const Navbar = () => {
                   }
                </SelectContent>
             </Select>
+         </div>
+
+         {/* Run Button */}
+         <div className="flex justify-between items-center w-full ml-2 mr-6">
+            <Button className="bg-[#007fbf] text-white hover:bg-[#0072bb]">
+               <FaPlay />
+               <span>Run Code</span>
+            </Button>
          </div>
 
       </div>
