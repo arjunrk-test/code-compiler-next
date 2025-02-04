@@ -11,3 +11,27 @@ body {
     --radius: 0.5rem;
   }
 }
+
+/* Gutter (Divider) Styling */
+.gutter {
+  background-color: #2d2e2f; 
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Horizontal Gutter */
+.gutter-horizontal {
+  width: 2px; 
+  cursor: ew-resize; 
+}
+
+/* Vertical Gutter */
+.gutter-vertical {
+  height: 2px; 
+  cursor: ns-resize; 
+}
+
+/* Hover Effect */
+.gutter:hover {
+  background-color: #444; 
+}
+
