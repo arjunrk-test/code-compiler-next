@@ -4,7 +4,7 @@ import { TbHexagonLetterAFilled } from "react-icons/tb";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "@/components/ui/select"; 
 import { Language_Versions } from "@/app/Constants";
 import { Button } from "./ui/button";
-import { FaPlay } from "react-icons/fa";
+import { FaGithub, FaPlay } from "react-icons/fa";
 
 const languages = Object.entries(Language_Versions);
 const Navbar = () => {
@@ -68,6 +68,15 @@ const Navbar = () => {
                <span>Run Code</span>
             </Button>
          </div>
+
+         {/* Github Repo link */}
+         <Link href="https://github.com/arjunrk-test/judge0-clone"  
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-3xl font-semibold ml-2 mr-2"
+         >
+            <FaGithub/>
+         </Link>
 
       </div>
     </nav>
