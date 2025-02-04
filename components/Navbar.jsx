@@ -49,7 +49,9 @@ const Navbar = () => {
                            key={language} 
                            value={language}
                            className="capitalize flex justify-between items-center"
-                           >{language}{`   ${version}`}
+                           >
+                              <span>{language}</span>
+                              <span className="ml-auto text-gray-500">&nbsp;{version}</span>
                         </SelectItem>
                      ))
                   }
