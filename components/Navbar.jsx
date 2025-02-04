@@ -3,6 +3,8 @@ import Link from "next/link";
 import { TbHexagonLetterAFilled } from "react-icons/tb";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "@/components/ui/select"; 
 import { Language_Versions } from "@/app/Constants";
+import { Button } from "./ui/button";
+import { FaGithub, FaPlay } from "react-icons/fa";
 
 const languages = Object.entries(Language_Versions);
 const Navbar = () => {
@@ -37,7 +39,7 @@ const Navbar = () => {
          </div>
 
          {/* Language Dropdown */}
-         <div className="flex justify-between items-center w-full ml-2 mr-6">
+         <div className="flex justify-between items-center ml-2 mr-6">
             <Select>
                <SelectTrigger className=" capitalize w-[150px] bg-transparent border-none text-white hover:bg-[#2d2e2f]">
                   <SelectValue placeholder="Languages" className=" font-normal text-[16px]" />
@@ -49,13 +51,32 @@ const Navbar = () => {
                            key={language} 
                            value={language}
                            className="capitalize flex justify-between items-center"
-                           >{language}{`   ${version}`}
+                           >
+                              <span>{language}</span>
+                              <span className="ml-auto text-gray-500">&nbsp;{version}</span>
                         </SelectItem>
                      ))
                   }
                </SelectContent>
             </Select>
          </div>
+
+         {/* Run Button */}
+         <div className="flex justify-between items-center w-full ml-2 mr-6">
+            <Button className="bg-[#007fbf] text-white hover:bg-[#0072bb]">
+               <FaPlay />
+               <span>Run Code</span>
+            </Button>
+         </div>
+
+         {/* Github Repo link */}
+         <Link href="https://github.com/arjunrk-test/judge0-clone"  
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-3xl font-semibold ml-2 mr-2"
+         >
+            <FaGithub/>
+         </Link>
 
       </div>
     </nav>
