@@ -11,7 +11,7 @@ const EditorLayout = () => {
         className="flex h-full"
         sizes={[60, 40]}
         minSize={300}
-        gutterSize={3}
+        gutterSize={5}
         gutter={(index, direction) => {
           const gutter = document.createElement("div");
           gutter.className = `gutter ${direction === "vertical" ? "gutter-vertical" : "gutter-horizontal"}`;
@@ -26,7 +26,7 @@ const EditorLayout = () => {
           direction="vertical"
           sizes={[50, 50]}
           minSize={100}
-          gutterSize={3}
+          gutterSize={5}
           gutter={(index, direction) => {
             const gutter = document.createElement("div");
             gutter.className = `gutter ${direction === "vertical" ? "gutter-vertical" : "gutter-horizontal"}`;
