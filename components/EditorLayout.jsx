@@ -1,5 +1,8 @@
 "use client";
 import Split from "react-split";
+import CodeEditor from "./CodeEditor";
+import InputWindow from "./InputWindow";
+import OutputWindow from "./OutputWindow";
 
 const EditorLayout = () => {
   return (
@@ -16,9 +19,7 @@ const EditorLayout = () => {
         }}
       >
         {/* Code Editor (Left Side) */}
-        <div className="bg-[#1E1E1E] text-white flex items-center justify-center">
-          Code Editor
-        </div>
+        <CodeEditor />
 
         {/* Right Panel (Input + Output) */}
         <Split
@@ -33,14 +34,11 @@ const EditorLayout = () => {
           }}
         >
           {/* Input Window (Top Right) */}
-          <div className="bg-[#1e1e1e] text-white flex items-center justify-center">
-            Input Window
-          </div>
-
+          <InputWindow />
+          
           {/* Output Window (Bottom Right) */}
-          <div className="bg-[#1e1e1e] text-white flex items-center justify-center">
-            Output Window
-          </div>
+          <OutputWindow />
+          
         </Split>
       </Split>
     </div>
