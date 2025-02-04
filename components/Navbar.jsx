@@ -1,13 +1,24 @@
 "use client";
 import Link from "next/link";
+import { useState } from "react";
 import { TbHexagonLetterAFilled } from "react-icons/tb";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "@/components/ui/select"; 
 import { Language_Versions } from "@/app/Constants";
 import { Button } from "./ui/button";
 import { FaGithub, FaPlay } from "react-icons/fa";
+import { VscColorMode } from "react-icons/vsc";
+import { CiLight, CiDark } from "react-icons/ci";
 
 const languages = Object.entries(Language_Versions);
 const Navbar = () => {
+  const [theme, setTheme] = useState("dark");
+  const handleThemeClick = () => {
+    if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  };
   return (
     <nav className="bg-[#1B1C1D] text-white p-2">
       <div className="flex justify-between items-center w-full">
@@ -69,11 +80,23 @@ const Navbar = () => {
             </Button>
          </div>
 
+         {/* Theme */}
+         <div className="flex justify-between items-center ml-2 mr-2">
+            <Button 
+               onClick={handleThemeClick}
+               className="bg-none text-white hover:bg-[#2D2E2F] hover:text-white"
+               variant="ghost"
+            >
+               {theme === "light" && <CiLight />}
+               {theme === "dark" && <CiDark />}
+            </Button>
+         </div>
+
          {/* Github Repo link */}
          <Link href="https://github.com/arjunrk-test/judge0-clone"  
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-3xl font-semibold ml-2 mr-2"
+            className="text-3xl font-semibold ml-6 mr-2"
          >
             <FaGithub/>
          </Link>
