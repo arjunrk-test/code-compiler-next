@@ -11,7 +11,7 @@ const OutputWindow = () => {
         </div>
   
         {/* Monaco Editor Input Window */}
-        <div className="relative flex-grow">
+        <div className="relative flex-1 overflow-hidden">
           <Editor
             height="100%" 
             language="text/plain"
