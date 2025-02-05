@@ -1,10 +1,34 @@
+import React from "react";
+import { Editor } from "@monaco-editor/react";
+
 const OutputWindow = () => {
-   return (
-     <div className="bg-[#1e1e1e] text-white flex items-center justify-center">
-       Output Window
-     </div>
-   );
- };
- 
- export default OutputWindow;
- 
+  return (
+      <div className="bg-[#1E1E1E] text-white h-full flex flex-col">
+  
+        {/* Navbar inside the input window */}
+        <div className="bg-black text-white flex items-center">
+          <div className="bg-[#1e1e1e] text-white text-[14px] py-[1px] px-6">Output</div>
+        </div>
+  
+        {/* Monaco Editor Input Window */}
+        <div className="relative flex-grow">
+          <Editor
+            height="100%" 
+            language="text/plain"
+            theme="vs-dark"
+            options={{
+              fontSize: 14,
+              minimap: { enabled: false },
+              wordWrap: "on",
+              lineNumbers: "on",
+              lineHeight: 20,
+              automaticLayout: true,
+              readOnly: true,
+            }}
+          />
+        </div>
+      </div>
+    );
+};
+
+export default OutputWindow;
