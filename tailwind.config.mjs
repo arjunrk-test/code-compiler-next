@@ -8,10 +8,17 @@ export default {
   ],
   theme: {
   	extend: {
-  		colors: {
-  			background: 'var(--background)',
-  			foreground: 'var(--foreground)'
-  		},
+		colors: {
+			navbar: "var(--navbar-bg)",
+			navbarHover: "var(--navbar-hover)",
+			navbarText: "var(--navbar-text)",
+			runButton: "var(--run-btn-bg)",
+			runButtonHover: "var(--run-btn-hover)",
+			runButtonText: "var(--run-btn-text)",
+			dropdownBg: "var(--dropdown-bg)",
+			dropdownText: "var(--dropdown-text)",
+			dropdownVersion: "var(--dropdown-version)",
+		 },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

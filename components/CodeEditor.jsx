@@ -9,7 +9,7 @@ const CodeEditor = () => {
         language="javascript"
         theme="vs-dark"
         options={{
-          fontSize: 14,
+          fontSize: 13,
           minimap: { enabled: true },
           wordWrap: "on",
           wrappingIndent: "same",

@@ -9,6 +9,20 @@ body {
 @layer base {
   :root {
     --radius: 0.5rem;
+    --navbar-bg: #1B1C1D;
+    --navbar-hover: #2D2E2F;
+    --navbar-text: white;
+    --run-btn-bg: #007fbf;
+    --run-btn-hover: #0072bb;
+    --run-btn-text: white;
+    --dropdown-bg: white;
+    --dropdown-text: black;
+    --dropdown-version: #6b7280; /* gray-500 */
+  }
+  .light {
+    --navbar-bg: white;
+    --navbar-hover: #C7C7C7;
+    --navbar-text: black;
   }
 }
 
