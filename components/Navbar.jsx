@@ -6,7 +6,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "
 import { Language_Versions } from "@/app/Constants";
 import { Button } from "./ui/button";
 import { FaGithub, FaPlay } from "react-icons/fa";
-import { VscColorMode } from "react-icons/vsc";
 import { CiLight, CiDark } from "react-icons/ci";
 
 const languages = Object.entries(Language_Versions);
@@ -35,14 +34,14 @@ const Navbar = () => {
          {/* File menu */}
          <div className="flex justify-between items-center ml-2 mr-6">
             <Select>
-               <SelectTrigger className="w-[70px] bg-transparent border-none text-white hover:bg-[#2D2E2F]">
-                  <SelectValue placeholder="File" className="font-normal text-[16px]" />
+               <SelectTrigger className="w-[100px] bg-transparent border-none text-white hover:bg-[#2D2E2F] text-sm">
+                  <SelectValue placeholder="File" />
                </SelectTrigger>
                <SelectContent className="bg-white text-black">
-                  <SelectItem value="open" className="flex justify-between">
+                  <SelectItem value="open" className="flex justify-between text-sm">
                      <span>Open File</span> 
                   </SelectItem>
-                  <SelectItem value="save" className="flex justify-between">
+                  <SelectItem value="save" className="flex justify-between text-sm">
                      <span>Save</span> 
                   </SelectItem>
                </SelectContent>
@@ -52,8 +51,8 @@ const Navbar = () => {
          {/* Language Dropdown */}
          <div className="flex justify-between items-center ml-2 mr-6">
             <Select>
-               <SelectTrigger className=" capitalize w-[150px] bg-transparent border-none text-white hover:bg-[#2d2e2f]">
-                  <SelectValue placeholder="Languages" className=" font-normal text-[16px]" />
+               <SelectTrigger className=" w-[150px] bg-transparent border-none text-white hover:bg-[#2d2e2f] text-sm">
+                  <SelectValue placeholder="Languages" />
                </SelectTrigger>
                <SelectContent className="bg-white text-black">
                   {
@@ -61,10 +60,10 @@ const Navbar = () => {
                         <SelectItem 
                            key={language} 
                            value={language}
-                           className="capitalize flex justify-between items-center"
+                           className="capitalize flex justify-between items-center text-sm"
                            >
                               <span>{language}</span>
-                              <span className="ml-auto text-gray-500">&nbsp;{version}</span>
+                              <span className="ml-auto text-gray-500 text-sm">&nbsp;{version}</span>
                         </SelectItem>
                      ))
                   }
@@ -74,7 +73,7 @@ const Navbar = () => {
 
          {/* Run Button */}
          <div className="flex justify-between items-center w-full ml-2 mr-6">
-            <Button className="bg-[#007fbf] text-white hover:bg-[#0072bb]">
+            <Button className="bg-[#007fbf] text-white hover:bg-[#0072bb] text-sm">
                <FaPlay />
                <span>Run Code</span>
             </Button>
