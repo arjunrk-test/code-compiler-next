@@ -11,18 +11,6 @@ import { CiLight, CiDark } from "react-icons/ci";
 const languages = Object.entries(Language_Versions);
 
 const Navbar = ({ theme, handleThemeClick }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState("");
-  const handleLanguageChange = (e) => {
-    setSelectedLanguage(e.target.value);
-  };
-
-  const handleRunClick = () => {
-    if (!selectedLanguage) {
-      alert("Please select a language first!");
-    }else {
-      // Proceed with running the code
-    }
-  };
   return (
     <nav className="bg-navbar text-navbar-text p-2">
       <div className="flex justify-between items-center w-full">
@@ -34,7 +22,7 @@ const Navbar = ({ theme, handleThemeClick }) => {
         {/* File Menu */}
         <div className="flex justify-between items-center ml-2 mr-6">
           <Select>
-            <SelectTrigger className="w-[100px] bg-transparent border-none text-navbarText hover:bg-navbarHover text-sm">
+            <SelectTrigger className="w-[150px] bg-transparent border-none text-navbarText hover:bg-navbarHover text-sm">
               <SelectValue placeholder="File" />
             </SelectTrigger>
             <SelectContent className="bg-white text-black">
@@ -51,7 +39,7 @@ const Navbar = ({ theme, handleThemeClick }) => {
         {/* Language Dropdown */}
         <div className="flex justify-between items-center ml-2 mr-6">
           <Select>
-            <SelectTrigger className="w-[150px] bg-transparent border-none text-navbarText hover:bg-navbarHover text-sm">
+            <SelectTrigger className="w-[200px] bg-transparent border-none text-navbarText hover:bg-navbarHover text-sm">
               <SelectValue placeholder="Languages" />
             </SelectTrigger>
             <SelectContent className="bg-white text-black">
@@ -67,7 +55,7 @@ const Navbar = ({ theme, handleThemeClick }) => {
 
         {/* Run Button */}
         <div className="flex justify-between items-center w-full ml-2 mr-6">
-          <Button onClick={handleRunClick} className="bg-runButton text-runButtonText hover:bg-runButtonHover text-sm">
+          <Button className="bg-runButton text-runButtonText hover:bg-runButtonHover text-sm">
             <FaPlay />
             <span>Run Code</span>
           </Button>
