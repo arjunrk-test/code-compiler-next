@@ -2,14 +2,14 @@
 import React, { useState } from "react";
 import { Editor } from "@monaco-editor/react";
 
-const InputWindow = () => {
+const InputWindow = ({ theme }) => {
   const [inputText, setInputText] = useState(""); 
   const handleInputChange = (value) => {
     setInputText(value); 
   };
 
   return (
-    <div className="bg-[#1E1E1E] text-white h-full flex flex-col">
+    <div className={`bg-${theme === "dark" ? "[#1E1E1E]" : "white"} text-black h-full flex flex-col`}>
 
       {/* Navbar inside the input window */}
       <div className="bg-black text-white flex items-center text-sm">
@@ -21,7 +21,7 @@ const InputWindow = () => {
         <Editor
           height="100%" 
           language="text/plain"
-          theme="vs-dark"
+          theme={theme === "dark" ? "vs-dark" : "vs-light"}
           value={inputText}
           onChange={handleInputChange}
           options={{
