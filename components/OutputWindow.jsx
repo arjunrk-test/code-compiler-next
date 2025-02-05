@@ -1,9 +1,9 @@
 import React from "react";
 import { Editor } from "@monaco-editor/react";
 
-const OutputWindow = () => {
+const OutputWindow = ({ theme }) => {
   return (
-      <div className="bg-[#1E1E1E] text-white h-full flex flex-col">
+      <div className={`bg-${theme === "dark" ? "[#1E1E1E]" : "white"} text-black h-full flex flex-col`}>
   
         {/* Navbar inside the input window */}
         <div className="bg-black text-white flex items-center text-sm">
@@ -15,7 +15,7 @@ const OutputWindow = () => {
           <Editor
             height="100%" 
             language="text/plain"
-            theme="vs-dark"
+            theme={theme === "dark" ? "vs-dark" : "vs-light"}
             options={{
               fontSize: 14,
               minimap: { enabled: false },

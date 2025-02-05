@@ -1,13 +1,13 @@
 "use client";
 import { Editor } from "@monaco-editor/react";
 
-const CodeEditor = () => {
+const CodeEditor = ({ theme }) => {
   return (
-    <div className="bg-[#1E1E1E] text-white flex items-center justify-center">
+    <div className={`bg-${theme === "dark" ? "[#1E1E1E]" : "white"} text-black flex items-center justify-center`}>
       <Editor
         height="100%"
         language="javascript"
-        theme="vs-dark"
+        theme={theme === "dark" ? "vs-dark" : "vs-light"}
         options={{
           fontSize: 13,
           minimap: { enabled: true },
