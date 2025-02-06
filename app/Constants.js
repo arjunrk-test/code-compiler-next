@@ -34,3 +34,37 @@ export const Code_Snippets = {
    typescript: `\nfunction greet(name: string): void {\n\tconsole.log("Hello, " + name + "!");\n}\n\ngreet("Arjun");\n`,
  };
  
+
+ export const Extensions = {
+   bash:"sh",
+   c: "c",
+   cpp: "cpp",
+   csharp: "cs",
+   java: "java",
+   javascript: "js",
+   kotlin: "kt",
+   perl: "pl",
+   php: "php",
+   python: "py",
+   ruby: "rb",
+   rust: "rs",
+   swift: "swift",
+   typescript: "ts",
+ };
+
+ export const Download_Filename = {
+   bash:"script",
+   c: "main",
+   cpp: "main",
+   csharp: "Test",
+   java: "Main",
+   javascript: "script",
+   kotlin: "Main",
+   perl: "script",
+   php: "script",
+   python: "script",
+   ruby: "script",
+   rust: "main",
+   swift: "Main",
+   typescript: "script",
+ };
