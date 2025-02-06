@@ -12,8 +12,8 @@ const InputWindow = ({ theme }) => {
     <div className={`bg-${theme === "dark" ? "[#1E1E1E]" : "white"} text-black h-full flex flex-col`}>
 
       {/* Navbar inside the input window */}
-      <div className="bg-black text-white flex items-center text-sm">
-        <div className="bg-[#1e1e1e] text-white py-[1px] px-6">Input</div>
+      <div className="bg-miniNavBg flex items-center text-sm outline-1">
+        <div className="bg-miniBoxBg text-miniBoxTx py-[1px] px-6">Input</div>
       </div>
 
       {/* Monaco Editor Input Window */}

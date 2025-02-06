@@ -18,6 +18,10 @@ export default {
 			dropdownBg: "var(--dropdown-bg)",
 			dropdownText: "var(--dropdown-text)",
 			dropdownVersion: "var(--dropdown-version)",
+			miniNavBg: "var(--mini-nav-bg)",
+			miniBoxBg: "var(--mini-box-bg)",
+			miniBoxTx: "var(--mini-box-tx)",
+			gutterBg: "var(--gutter-bg)",
 		 },
   		borderRadius: {
   			lg: 'var(--radius)',
