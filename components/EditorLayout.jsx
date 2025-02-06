@@ -4,7 +4,7 @@ import CodeEditor from "./CodeEditor";
 import InputWindow from "./InputWindow";
 import OutputWindow from "./OutputWindow";
 
-const EditorLayout = ({ theme }) => {
+const EditorLayout = ({ theme, selectedLanguage, code }) => {
   return (
     <div className="h-[calc(100vh-50px)]">
       <Split
@@ -19,7 +19,7 @@ const EditorLayout = ({ theme }) => {
         }}
       >
         {/* Code Editor (Left Side) */}
-        <CodeEditor theme={theme}/>
+        <CodeEditor theme={theme} language={selectedLanguage} code={code} />
 
         {/* Right Panel (Input + Output) */}
         <Split
@@ -34,11 +34,10 @@ const EditorLayout = ({ theme }) => {
           }}
         >
           {/* Input Window (Top Right) */}
-          <InputWindow theme={theme}/>
+          <InputWindow theme={theme} />
           
           {/* Output Window (Bottom Right) */}
-          <OutputWindow theme={theme}/>
-          
+          <OutputWindow theme={theme} />
         </Split>
       </Split>
     </div>
