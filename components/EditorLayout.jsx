@@ -8,7 +8,7 @@ const EditorLayout = ({ theme, selectedLanguage, code }) => {
   return (
     <div className="h-[calc(100vh-50px)]">
       <Split
-        className="flex h-full"
+        className="flex h-full bg-gutterBg"
         sizes={[60, 40]}
         minSize={300}
         gutterSize={5}

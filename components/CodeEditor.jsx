@@ -12,8 +12,8 @@ const CodeEditor = ({ theme, language, code }) => {
   return (
     <div className={`flex flex-col h-full ${theme === "dark" ? "bg-[#1E1E1E]" : "bg-white"}`}>
       {/* Navbar for editor */}
-      <div className="bg-black text-white flex items-center text-sm">
-        <div className="bg-[#1e1e1e] text-white py-[1px] px-6">Main</div>
+      <div className="bg-miniNavBg flex items-center text-sm">
+        <div className="bg-miniBoxBg text-miniBoxTx py-[1px] px-6">Main</div>
       </div>
 
       <div className="relative flex-grow">
