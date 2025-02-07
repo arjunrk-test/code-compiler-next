@@ -34,15 +34,12 @@ export default function Home() {
 
   const handleRunCode = async () => {
     try {
-      console.log(code);
       const response = await axios.post('http://localhost:3001/api/run-code', {
         language: selectedLanguage,
         version: Language_Versions[selectedLanguage],
         code: code,
         stdin: inputText,
       });
-
-      console.log("Response from backend:", response.data);
       setOutput(response.data.run.stdout);
     } catch (error) {
       console.error('Code execution failed', error);
