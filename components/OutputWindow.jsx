@@ -14,6 +14,7 @@ const OutputWindow = ({ theme, output }) => {
         <div className="relative flex-1 overflow-hidden">
           <Editor
             height="100%" 
+            key={output}
             language="text/plain"
             theme={theme === "dark" ? "vs-dark" : "vs-light"}
             value={output}
