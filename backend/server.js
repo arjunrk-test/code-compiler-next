@@ -6,10 +6,25 @@ const app = express();
 const PORT = 10000;
 
 app.use(cors({
-  origin: "*",
-  methods: ["POST, GET"],
-  credentials: true,
+  origin: "https://code-compiler-next.vercel.app", 
+  methods: ["POST", "GET"], 
+  credentials: true
 })); 
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://code-compiler-next.vercel.app");
+  res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
+
+app.options("/api/run-code", (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://code-compiler-next.vercel.app");
+  res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.sendStatus(200);
+});
+
 app.use(express.json());
 
 app.post('/api/run-code', async (req, res) => {
