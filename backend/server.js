@@ -5,13 +5,11 @@ const cors = require('cors');
 const app = express();
 const PORT = 10000;
 
-const corsOptions = {
-  origin: ['https://code-compiler-next.onrender.com'],
-  methods: "POST",
+app.use(cors({
+  origin: "*",
+  methods: ["POST, GET"],
   credentials: true,
-}
-
-app.use(cors(corsOptions)); 
+})); 
 app.use(express.json());
 
 app.post('/api/run-code', async (req, res) => {
