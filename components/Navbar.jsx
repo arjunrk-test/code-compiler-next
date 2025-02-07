@@ -9,7 +9,7 @@ import { CiLight, CiDark } from "react-icons/ci";
 
 const languages = Object.entries(Language_Versions);
 
-const Navbar = ({ theme, handleThemeClick, selectedLanguage, onLanguageChange }) => {
+const Navbar = ({ theme, handleThemeClick, selectedLanguage, onLanguageChange, handleRunCode }) => {
   return (
     <nav className="bg-navbar text-navbar-text p-2">
       <div className="flex justify-between items-center w-full">
@@ -54,7 +54,7 @@ const Navbar = ({ theme, handleThemeClick, selectedLanguage, onLanguageChange })
 
         {/* Run Button */}
         <div className="flex justify-between items-center w-full ml-2 mr-6">
-          <Button className="bg-runButton text-runButtonText hover:bg-runButtonHover text-sm">
+          <Button onClick={handleRunCode} className="bg-runButton text-runButtonText hover:bg-runButtonHover text-sm">
             <FaPlay />
             <span>Run Code</span>
           </Button>

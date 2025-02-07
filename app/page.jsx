@@ -1,13 +1,16 @@
 "use client";
 import { useState, useEffect } from "react";
+import axios from 'axios';
 import Navbar from "@/components/Navbar";
 import EditorLayout from "@/components/EditorLayout";
-import { Code_Snippets } from "@/app/Constants";
+import { Code_Snippets, Language_Versions } from "@/app/Constants";
 
 export default function Home() {
   const [theme, setTheme] = useState("dark");
-  const [selectedLanguage, setSelectedLanguage] = useState("bash"); // Default language is Bash
-  const [code, setCode] = useState(Code_Snippets["bash"]); // Default code snippet
+  const [selectedLanguage, setSelectedLanguage] = useState("bash");
+  const [code, setCode] = useState(Code_Snippets["bash"]);
+  const [inputText, setInputText] = useState("");
+  const [output, setOutput] = useState("");
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -26,7 +29,21 @@ export default function Home() {
 
   const handleLanguageChange = (newLanguage) => {
     setSelectedLanguage(newLanguage);
-    setCode(Code_Snippets[newLanguage] || ""); // Load default code for selected language
+    setCode(Code_Snippets[newLanguage] || ""); 
+  };
+
+  const handleRunCode = async () => {
+    try {
+      const response = await axios.post('http://localhost:3001/api/run-code', {
+        language: selectedLanguage,
+        version: Language_Versions[selectedLanguage],
+        code: code,
+        stdin: inputText,
+      });
+      setOutput(response.data.run.stdout);
+    } catch (error) {
+      console.error('Code execution failed', error);
+    }
   };
 
   return (
@@ -35,12 +52,17 @@ export default function Home() {
         theme={theme} 
         handleThemeClick={handleThemeClick} 
         selectedLanguage={selectedLanguage} 
-        onLanguageChange={handleLanguageChange} 
+        onLanguageChange={handleLanguageChange}
+        handleRunCode={handleRunCode}
       />
       <EditorLayout 
         theme={theme} 
         selectedLanguage={selectedLanguage} 
         code={code} 
+        setCode={setCode}
+        inputText={inputText}
+        setInputText={setInputText}
+        output={output}
       />
     </>
   );

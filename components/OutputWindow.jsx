@@ -1,7 +1,7 @@
 import React from "react";
 import { Editor } from "@monaco-editor/react";
 
-const OutputWindow = ({ theme }) => {
+const OutputWindow = ({ theme, output }) => {
   return (
       <div className={`bg-${theme === "dark" ? "[#1E1E1E]" : "white"} text-black h-full flex flex-col`}>
   
@@ -16,6 +16,7 @@ const OutputWindow = ({ theme }) => {
             height="100%" 
             language="text/plain"
             theme={theme === "dark" ? "vs-dark" : "vs-light"}
+            value={output}
             options={{
               fontSize: 14,
               minimap: { enabled: false },
