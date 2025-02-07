@@ -68,7 +68,7 @@ const Navbar = ({ theme, handleThemeClick, selectedLanguage, onLanguageChange, h
         </div>
 
         {/* GitHub Repo Link */}
-        <Link href="https://github.com/arjunrk-test/judge0-clone" target="_blank" rel="noopener noreferrer" className="text-3xl font-semibold ml-6 mr-2 text-navbarText">
+        <Link href="https://github.com/arjunrk-test/code-compiler-next" target="_blank" rel="noopener noreferrer" className="text-3xl font-semibold ml-6 mr-2 text-navbarText">
           <FaGithub />
         </Link>
       </div>
