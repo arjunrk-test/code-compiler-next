@@ -2,8 +2,7 @@
 import React, { useState } from "react";
 import { Editor } from "@monaco-editor/react";
 
-const InputWindow = ({ theme }) => {
-  const [inputText, setInputText] = useState(""); 
+const InputWindow = ({ theme, inputText, setInputText }) => { 
   const handleInputChange = (value) => {
     setInputText(value); 
   };

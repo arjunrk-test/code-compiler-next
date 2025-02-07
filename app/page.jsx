@@ -40,9 +40,14 @@ export default function Home() {
         code: code,
         stdin: inputText,
       });
-      setOutput(response.data.run.stdout);
+      const errorMessage = response.data.run?.stderr || response.data.stderr || response.data.compile?.stderr;
+      if(errorMessage){
+        setOutput("Error: \n" + errorMessage);
+      }else{
+        setOutput(response.data.run.stdout || "No output");
+      }
     } catch (error) {
-      console.error('Code execution failed', error);
+      setOutput("Execution error: " + (error.response?.data?.error || error.message || "Unknown error"));
     }
   };
 
