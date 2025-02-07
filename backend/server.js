@@ -6,8 +6,9 @@ const app = express();
 const PORT = 10000;
 
 const corsOptions = {
-  origin: 'https://code-compiler-next.onrender.com/',
+  origin: ['https://code-compiler-next.onrender.com'],
   methods: "POST",
+  credentials: true,
 }
 
 app.use(cors(corsOptions)); 
