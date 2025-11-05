@@ -10,6 +10,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata = {
   title: "Online Code Compiler",
   description: "By Arjun Saravanakumar",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
 };
 
 export default function RootLayout({ children }) {

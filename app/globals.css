@@ -57,3 +57,29 @@ body {
   background-color: #444; 
 }
 
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+  /* Better touch targets for interactive elements (but allow smaller buttons in navbar) */
+  a:not([class*="navbar"]) {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Smooth scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Prevent text selection on buttons */
+  button {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  
+  /* Navbar buttons can be smaller for alignment */
+  nav button {
+    min-height: 32px;
+    min-width: 32px;
+  }
+}
+
