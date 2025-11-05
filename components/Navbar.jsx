@@ -5,12 +5,12 @@ import { TbHexagonLetterAFilled } from "react-icons/tb";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Language_Versions } from "@/app/Constants";
 import { Button } from "./ui/button";
-import { FaGithub, FaPlay, FaBars, FaTimes } from "react-icons/fa";
+import { FaGithub, FaPlay, FaBars, FaTimes, FaFolderOpen, FaSave } from "react-icons/fa";
 import { CiLight, CiDark } from "react-icons/ci";
 
 const languages = Object.entries(Language_Versions);
 
-const Navbar = ({ theme, handleThemeClick, selectedLanguage, onLanguageChange, handleRunCode }) => {
+const Navbar = ({ theme, handleThemeClick, selectedLanguage, onLanguageChange, handleRunCode, handleOpenFile, handleSaveFile }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLanguageChange = (value) => {
@@ -27,21 +27,26 @@ const Navbar = ({ theme, handleThemeClick, selectedLanguage, onLanguageChange, h
           <TbHexagonLetterAFilled />
         </Link>
 
-        {/* File Menu */}
-        <div className="flex justify-between items-center ml-2 mr-6">
-          <Select>
-            <SelectTrigger className="w-[150px] bg-transparent border-none text-navbarText hover:bg-navbarHover text-sm">
-              <SelectValue placeholder="File" />
-            </SelectTrigger>
-            <SelectContent className="bg-white text-black">
-              <SelectItem value="open" className="flex justify-between text-sm">
-                <span>Open File</span>
-              </SelectItem>
-              <SelectItem value="save" className="flex justify-between text-sm">
-                <span>Save</span>
-              </SelectItem>
-            </SelectContent>
-          </Select>
+        {/* File Menu - Open and Save Buttons */}
+        <div className="flex justify-between items-center gap-2 ml-2 mr-6">
+          <Button 
+            onClick={handleOpenFile} 
+            className="bg-transparent border-none text-navbarText hover:text-navbarText hover:bg-navbarHover text-sm"
+            variant="ghost"
+            title="Open File"
+          >
+            <FaFolderOpen />
+            <span className="ml-1">Open</span>
+          </Button>
+          <Button 
+            onClick={handleSaveFile} 
+            className="bg-transparent border-none text-navbarText hover:text-navbarText hover:bg-navbarHover text-sm"
+            variant="ghost"
+            title="Save File"
+          >
+            <FaSave />
+            <span className="ml-1">Save</span>
+          </Button>
         </div>
 
         {/* Language Dropdown */}
@@ -116,21 +121,30 @@ const Navbar = ({ theme, handleThemeClick, selectedLanguage, onLanguageChange, h
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
         <div className="md:hidden mt-3 pb-3 space-y-3 border-t border-navbarHover pt-3">
-          {/* File Menu */}
-          <div className="px-2">
-            <Select>
-              <SelectTrigger className="w-full bg-transparent border border-navbarHover text-navbarText hover:bg-navbarHover text-sm">
-                <SelectValue placeholder="File" />
-              </SelectTrigger>
-              <SelectContent className="bg-white text-black">
-                <SelectItem value="open" className="flex justify-between text-sm">
-                  <span>Open File</span>
-                </SelectItem>
-                <SelectItem value="save" className="flex justify-between text-sm">
-                  <span>Save</span>
-                </SelectItem>
-              </SelectContent>
-            </Select>
+          {/* File Menu - Open and Save Buttons */}
+          <div className="px-2 flex gap-2">
+            <Button 
+              onClick={() => {
+                handleOpenFile();
+                setIsMobileMenuOpen(false);
+              }} 
+              className="flex-1 bg-transparent border border-navbarHover text-navbarText hover:bg-navbarHover text-sm"
+              variant="ghost"
+            >
+              <FaFolderOpen size={14} />
+              <span className="ml-1">Open</span>
+            </Button>
+            <Button 
+              onClick={() => {
+                handleSaveFile();
+                setIsMobileMenuOpen(false);
+              }} 
+              className="flex-1 bg-transparent border border-navbarHover text-navbarText hover:bg-navbarHover text-sm"
+              variant="ghost"
+            >
+              <FaSave size={14} />
+              <span className="ml-1">Save</span>
+            </Button>
           </div>
 
           {/* Language Dropdown */}
